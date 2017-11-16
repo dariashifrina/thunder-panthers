@@ -1,2 +1,10 @@
+ThunderPanthers -- 2017-11-13 13:09
+First idea: decided to use football and baseball player APIs to compare stats and get the winning player.
+Created repo.
+
+ThunderPanthers -- 2017-11-14:09
+Second idea: decided to use Yandex Translate API and Getty Images APIs to create a comic strip that translates inputted text multiple times to create a funny meme.
+Linked submodule.
+
 DariaS -- 2017-11-15 21:33
 Created devlog.
