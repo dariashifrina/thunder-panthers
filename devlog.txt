@@ -20,3 +20,6 @@ Created site map.
 
 ThunderPanthers -- 2017-11-16 13:10
 Finished design doc.
+
+DariaS -- 2017-11-19 17:43
+Incorporated design doc suggestions from other teams(clarified Foreword and tasks).
