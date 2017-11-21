@@ -9,17 +9,21 @@ Linked submodule.
 ThunderPanthers -- 2017-11-15 13:05
 Final idea: decided to use Words API and Getty Images APIs to create a comic strip that translates inputted text using the synonyms of ach noun. Worked on component and sitemaps.
 
-DariaS -- 2017-11-15 21:33
+dariaS -- 2017-11-15 21:33
 Created devlog.
 
-JawadK -- 2017-11-15 23:00
+jawadK -- 2017-11-15 23:00
 Created component map.
 
-KarinaI -- 2017-11-15 22:00
+karinaI -- 2017-11-15 22:00
 Created site map.
 
 ThunderPanthers -- 2017-11-16 13:10
 Finished design doc.
 
-DariaS -- 2017-11-19 17:43
+dariaS -- 2017-11-19 17:43
 Incorporated design doc suggestions from other teams(clarified Foreword and tasks).
+
+ThunderPanthers -- 2017-11-21 12:57
+Created necessary files from designdoc. Added "getty.py" from Karina's API assignment.
+
