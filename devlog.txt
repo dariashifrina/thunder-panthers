@@ -44,4 +44,6 @@ Worked on parsing strings to find nouns and then getting synonyms for those noun
 taylorW -- 2017-11-19 13:10
 Implementing basic Bootsrap for index.html.
 
+jawadK -- 2017-11-22 13:18
+Started translation functions. Basically pseudocode at the moment.
 
