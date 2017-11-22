@@ -1,3 +1,14 @@
+▀▀█▀▀ █░░█ █░░█ █▀▀▄ █▀▀▄ █▀▀ █▀▀█ 　 ▒█▀▀█ █▀▀█ █▀▀▄ ▀▀█▀▀ █░░█ █▀▀ █▀▀█ █▀▀ 
+░▒█░░ █▀▀█ █░░█ █░░█ █░░█ █▀▀ █▄▄▀ 　 ▒█▄▄█ █▄▄█ █░░█ ░░█░░ █▀▀█ █▀▀ █▄▄▀ ▀▀█ 
+░▒█░░ ▀░░▀ ░▀▀▀ ▀░░▀ ▀▀▀░ ▀▀▀ ▀░▀▀ 　 ▒█░░░ ▀░░▀ ▀░░▀ ░░▀░░ ▀░░▀ ▀▀▀ ▀░▀▀ ▀▀▀ 
+
+▒█▀▀▄ █▀▀ ▀█░█▀ █░░ █▀▀█ █▀▀▀ 
+▒█░▒█ █▀▀ ░█▄█░ █░░ █░░█ █░▀█ 
+▒█▄▄▀ ▀▀▀ ░░▀░░ ▀▀▀ ▀▀▀▀ ▀▀▀▀ 
+
+
+
+
 ThunderPanthers -- 2017-11-13 13:09
 First idea: decided to use football and baseball player APIs to compare stats and get the winning player.
 Created repo and started design doc.
@@ -26,4 +37,11 @@ Incorporated design doc suggestions from other teams(clarified Foreword and task
 
 ThunderPanthers -- 2017-11-21 12:57
 Created necessary files from designdoc. Added "getty.py" from Karina's API assignment.
+
+karinaI -- 2017-11-22 13:19
+Worked on parsing strings to find nouns and then getting synonyms for those nouns from the Words API.
+
+taylorW -- 2017-11-19 13:10
+Implementing basic Bootsrap for index.html.
+
 
