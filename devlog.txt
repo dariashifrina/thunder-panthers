@@ -54,6 +54,6 @@ taylorW -- 2017-11-24 1:44
 Used Bootstrap and coolors.co to modify html templates, created new css folder and files, created favicon for website.
 
 taylorW -- 2017-11-24 4:04
-Added jinja to html files, made aesthetic mods.
+Added jinja to html files, made aesthetic mods. Added title and name for adding best comics.
 
 
