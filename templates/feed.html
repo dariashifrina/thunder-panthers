@@ -20,7 +20,7 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #ED6A5A;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
       <a class="navbar-brand" href="#">Humorous Slip</a>
 
     <!--
@@ -61,39 +61,50 @@
       <div class="starter-template">
         <h1>Best Comics Feed</h1>
         <p class="lead">
-          Type in four phrases below, and we'll generate two comics for you:
-
-          <p class="medium">
-            1. A normal comic generated directly from the phrases you gave.
-            <br>
-            2. A silly comic generated through language translation and word association.
-          </p>
-
+          Here's a collection of the best comics generated using Humorous Slip!
         </p>
-
       </div>
 
-      <!-- Form -->
+      {% for comic in best_comics %}
+
       <div class="container">
-        <!-- change names based on app.py, CHANGE TO POST-->
-        <form class="form-input" method="GET">
-
-          <label for="inputPhrase1" class="sr-only">Phrase #1</label>
-          <input type="phrase1" name="phrase1" id="inputPhrase1" class="form-control" placeholder="Phrase #1" required>
-
-          <label for="inputPhrase2" class="sr-only">Phrase #2</label>
-          <input type="phrase2" name="phrase2" id="inputPhrase2" class="form-control" placeholder="Phrase #2" required>
-
-          <label for="inputPhrase3" class="sr-only">Phrase #3</label>
-          <input type="phrase3" name="phrase3" id="inputPhrase3" class="form-control" placeholder="Phrase #3" required>
-
-          <label for="inputPhrase4" class="sr-only">Phrase #4</label>
-          <input type="phrase4" name="phrase4" id="inputPhrase4" class="form-control" placeholder="Phrase #4" required>
-
-          <button class="btn btn-lg btn-block" style="background-color: #9BC1BC" type="submit">Generate my Comic!</button>
-
-        </form>
+        <h3>
+          {{Title}}
+        </h3>
+        <table class="table table-bordered">
+          <tr>
+            <td> <img src={{pic1}}> </td> <!-- pic1 -->
+            <td> <img src={{pic2}}> </td> <!-- pic2 -->
+          </tr>
+          <tr>
+            <td> {{phrase1}} </td> <!-- phrase1 -->
+            <td> {{phrase2}} </td> <!-- phrase2 -->
+          </tr>
+        </table>
+        <table class="table table-bordered">
+          <tr>
+            <td> <img src={{pic3}}> </td> <!-- pic3 -->
+            <td> <img src={{pic4}}> </td> <!-- pic4 -->
+          </tr>
+          <tr>
+            <td> {{phrase3}} </td> <!-- phrase3 -->
+            <td> {{phrase4}} </td> <!-- phrase4 -->
+          </tr>
+        </table>
       </div>
+
+      {% endfor %}
+
+      <br>
+      <br>
+
+      <center>
+        <form action="/" class="form-input" method="GET">
+          <button class="btn btn-sm" type="submit">Back to Home</button>
+        </form>
+      </center>
+
+
 
     </main><!-- /.container -->
 

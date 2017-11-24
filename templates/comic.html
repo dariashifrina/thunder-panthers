@@ -21,7 +21,7 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #ED6A5A;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
       <a class="navbar-brand" href="#">Humorous Slip</a>
 
     <!--
@@ -60,7 +60,7 @@
     <main role="main" class="container">
 
       <div class="starter-template">
-        <h1>Here are your comics!</h1>
+        <h1>Here are your comics:</h1>
         <p class="lead">
           If you like one of the comics below, you can post it to the Best Comics Feed, and your comic will join the best comics of other users.
         </p>
@@ -70,7 +70,7 @@
 
       <!-- Normal Comic -->
       <div class="container">
-        <h3 style="color:#9BC1BC">
+        <h3>
           Normal Comic:
         </h3>
         <table class="table table-bordered">
@@ -97,6 +97,9 @@
 
       <!-- Send Normal Comic to Feed -->
       <form class="form-input" method="GET">
+        <!-- send title -->
+        <label for="title" class="sr-only">title</label>
+        <input type="title" name="title" id="title" class="form-control" placeholder="Title your comic!" required>
         <!-- send 1 -->
         <input type="hidden" name="pic1" value={{norm_url1}}></input>
         <input type="hidden" name="phrase1" value={{norm_phrase1}}></input>
@@ -110,7 +113,7 @@
         <input type="hidden" name="pic4" value={{norm_url4}}></input>
         <input type="hidden" name="phrase4" value={{norm_phrase4}}></input>
 
-        <button class="btn btn-lg btn-block" style="background-color: #9BC1BC" type="submit">Post to Feed</button>
+        <button class="btn btn-lg btn-block" type="submit">Post to Feed</button>
       </form>
 
 
@@ -120,7 +123,7 @@
 
       <!-- Silly Comic -->
       <div class="container">
-        <h3 style="color:#9BC1BC">
+        <h3>
           Silly Comic:
         </h3>
         <table class="table table-bordered">
@@ -135,11 +138,11 @@
         </table>
         <table class="table table-bordered">
           <tr>
-            <td> <img src={{silly_url2}}> </td> <!-- pic3 -->
+            <td> <img src={{silly_url3}}> </td> <!-- pic3 -->
             <td> <img src={{silly_url4}}> </td> <!-- pic4 -->
           </tr>
           <tr>
-            <td> {{silly_phrase2}} </td> <!-- phrase3 -->
+            <td> {{silly_phrase3}} </td> <!-- phrase3 -->
             <td> {{silly_phrase4}} </td> <!-- phrase4 -->
           </tr>
         </table>
@@ -147,6 +150,9 @@
 
       <!-- Send Silly Comic to Feed -->
       <form class="form-input" method="GET">
+        <!-- send title -->
+        <label for="title" class="sr-only">title</label>
+        <input type="title" name="title" id="title" class="form-control" placeholder="Title your comic!" required>
         <!-- send 1 -->
         <input type="hidden" name="pic1" value={{silly_url1}}></input>
         <input type="hidden" name="phrase1" value={{silly_phrase1}}></input>
@@ -160,11 +166,19 @@
         <input type="hidden" name="pic4" value={{silly_url4}}></input>
         <input type="hidden" name="phrase4" value={{silly_phrase4}}></input>
 
-        <button class="btn btn-lg btn-block" style="background-color: #9BC1BC" type="submit">Post to Feed</button>
+        <button class="btn btn-lg btn-block" type="submit">Post to Feed</button>
       </form>
 
     </main><!-- /.container -->
 
+    <br>
+    <br>
+
+    <center>
+      <form action="/" class="form-input" method="GET">
+        <button class="btn btn-sm" type="submit">Back to Home</button>
+      </form>
+    </center>
 
     <!-- Bootstrap core JavaScript ***FIX LATER***
     ================================================== -->

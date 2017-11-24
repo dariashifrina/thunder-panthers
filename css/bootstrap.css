@@ -448,6 +448,7 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: 1.75rem;
+  color: #9BC1BC;
 }
 
 h4, .h4 {
@@ -2823,6 +2824,7 @@ fieldset[disabled] a.btn {
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
+  background-color: #9BC1BC;
 }
 
 .btn-sm, .btn-group-sm > .btn {
@@ -2830,6 +2832,8 @@ fieldset[disabled] a.btn {
   font-size: 0.875rem;
   line-height: 1.5;
   border-radius: 0.2rem;
+  background-color: #ED6A5A;
+  color: #fff;
 }
 
 .btn-block {
@@ -3621,6 +3625,7 @@ tbody.collapse.show {
   -ms-flex-pack: justify;
       justify-content: space-between;
   padding: 0.5rem 1rem;
+  background-color: #ED6A5A;
 }
 
 .navbar > .container,
