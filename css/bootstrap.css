@@ -1601,7 +1601,7 @@ pre code {
 }
 
 .table-bordered {
-  border: 3px solid #5D576B;
+  border: 3px solid #F4F1BB;
   border-top-width: 4px;
   border-bottom-width: 4px;
   border-right-width: 4px;
@@ -1614,7 +1614,7 @@ pre code {
 
 .table-bordered th,
 .table-bordered td {
-  border: 3px solid #5D576B;
+  border: 3px solid #F4F1BB;
 }
 
 .table-bordered thead th,
@@ -2825,6 +2825,7 @@ fieldset[disabled] a.btn {
   line-height: 1.5;
   border-radius: 0.3rem;
   background-color: #9BC1BC;
+  color: #fff;
 }
 
 .btn-sm, .btn-group-sm > .btn {
