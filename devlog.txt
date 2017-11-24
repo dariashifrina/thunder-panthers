@@ -48,6 +48,6 @@ jawadK -- 2017-11-22 13:18
 Started translation functions. Basically pseudocode at the moment.
 
 karinaI -- 2017-11-24 11:32
-Found Datamuse API, which is better for our project than Words API because it requires credit card information. Created get_adj(word) and get_syn(word) which used Datamuse return synonyms and adjectives for given words. Created new_sent which uses get_adj, get_syn, and a list of words to keep to create a new sentence. It works on a basic level, but still needs some touching up. 
+Found Datamuse API, which is better for our project than Words API because Words API requires credit card information. Created get_adj(word) and get_syn(word) which used Datamuse to return synonyms and adjectives for given words. Created new_sent which uses get_adj, get_syn, and a list of words to keep to create a new sentence. It works on a basic level, but still needs some touching up. 
 
 
