@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../favicon.ico">
+
+    <title>COMIC</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/starter-template.css" rel="stylesheet">
+    <link href="../css/form.css" rel="stylesheet">
+
+
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #ED6A5A;">
+      <a class="navbar-brand" href="#">Humorous Slip</a>
+
+    <!--
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    -->
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Make A Comic</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Best Comics Feed</a>
+          </li>
+          <!--
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    -->
+
+    </nav>
+
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1>Here are your comics!</h1>
+        <p class="lead">
+          If you like one of the comics below, you can post it to the Best Comics Feed, and your comic will join the best comics of other users.
+        </p>
+      </div>
+
+      <br>
+
+      <!-- Normal Comic -->
+      <div class="container">
+        <h3 style="color:#9BC1BC">
+          Normal Comic:
+        </h3>
+        <table class="table table-bordered">
+          <tr>
+            <td> <img src={{norm_url1}}> </td> <!-- pic1 -->
+            <td> <img src={{norm_url2}}> </td> <!-- pic2 -->
+          </tr>
+          <tr>
+            <td> {{norm_phrase1}} </td> <!-- phrase1 -->
+            <td> {{norm_phrase2}} </td> <!-- phrase2 -->
+          </tr>
+        </table>
+        <table class="table table-bordered">
+          <tr>
+            <td> <img src={{norm_url2}}> </td> <!-- pic3 -->
+            <td> <img src={{norm_url4}}> </td> <!-- pic4 -->
+          </tr>
+          <tr>
+            <td> {{norm_phrase2}} </td> <!-- phrase3 -->
+            <td> {{norm_phrase4}} </td> <!-- phrase4 -->
+          </tr>
+        </table>
+      </div>
+
+      <!-- Send Normal Comic to Feed -->
+      <form class="form-input" method="GET">
+        <!-- send 1 -->
+        <input type="hidden" name="pic1" value={{norm_url1}}></input>
+        <input type="hidden" name="phrase1" value={{norm_phrase1}}></input>
+        <!-- send 2 -->
+        <input type="hidden" name="pic2" value={{norm_url2}}></input>
+        <input type="hidden" name="phrase2" value={{norm_phrase2}}></input>
+        <!-- send 3 -->
+        <input type="hidden" name="pic3" value={{norm_url3}}></input>
+        <input type="hidden" name="phrase3" value={{norm_phrase3}}></input>
+        <!-- send 4 -->
+        <input type="hidden" name="pic4" value={{norm_url4}}></input>
+        <input type="hidden" name="phrase4" value={{norm_phrase4}}></input>
+
+        <button class="btn btn-lg btn-block" style="background-color: #9BC1BC" type="submit">Post to Feed</button>
+      </form>
+
+
+      <br>
+      <br>
+
+
+      <!-- Silly Comic -->
+      <div class="container">
+        <h3 style="color:#9BC1BC">
+          Silly Comic:
+        </h3>
+        <table class="table table-bordered">
+          <tr>
+            <td> <img src={{silly_url1}}> </td> <!-- pic1 -->
+            <td> <img src={{silly_url2}}> </td> <!-- pic2 -->
+          </tr>
+          <tr>
+            <td> {{silly_phrase1}} </td> <!-- phrase1 -->
+            <td> {{silly_phrase2}} </td> <!-- phrase2 -->
+          </tr>
+        </table>
+        <table class="table table-bordered">
+          <tr>
+            <td> <img src={{silly_url2}}> </td> <!-- pic3 -->
+            <td> <img src={{silly_url4}}> </td> <!-- pic4 -->
+          </tr>
+          <tr>
+            <td> {{silly_phrase2}} </td> <!-- phrase3 -->
+            <td> {{silly_phrase4}} </td> <!-- phrase4 -->
+          </tr>
+        </table>
+      </div>
+
+      <!-- Send Silly Comic to Feed -->
+      <form class="form-input" method="GET">
+        <!-- send 1 -->
+        <input type="hidden" name="pic1" value={{silly_url1}}></input>
+        <input type="hidden" name="phrase1" value={{silly_phrase1}}></input>
+        <!-- send 2 -->
+        <input type="hidden" name="pic2" value={{silly_url2}}></input>
+        <input type="hidden" name="phrase2" value={{silly_phrase2}}></input>
+        <!-- send 3 -->
+        <input type="hidden" name="pic3" value={{silly_url3}}></input>
+        <input type="hidden" name="phrase3" value={{silly_phrase3}}></input>
+        <!-- send 4 -->
+        <input type="hidden" name="pic4" value={{silly_url4}}></input>
+        <input type="hidden" name="phrase4" value={{silly_phrase4}}></input>
+
+        <button class="btn btn-lg btn-block" style="background-color: #9BC1BC" type="submit">Post to Feed</button>
+      </form>
+
+    </main><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript ***FIX LATER***
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
