@@ -43,16 +43,17 @@ r_adj = md[r_int]
 def get_adj(word):
     meta_data=requests.get("https://api.datamuse.com/words?rel_jjb=" + word)
     md= meta_data.json()
-    r_int = int(random.random()*len(md))
-    r_adj = md[r_int]
-    return r_adj['word']
-
+    if md != [] :
+        r_int = int(random.random()*len(md))
+        r_adj = md[r_int]
+        return r_adj['word']
+    
 
 
 def get_syn(word):
     meta_data=requests.get("https://api.datamuse.com/words?rel_syn=" + word)
     md= meta_data.json()
-    try: 
+    try:
         if (len(md) != 0):
             r_int = int(random.random()*len(md))
             r_syn = md[r_int]
@@ -60,15 +61,14 @@ def get_syn(word):
         else:
             meta_data=requests.get("https://api.datamuse.com/words?ml=" + word)
             md= meta_data.json()
-            r_int = int(random.random()*len(md[:20]))
+            if len(md) >= 20:
+                r_int = int(random.random()*len(md[:20]))
+            else:
+                r_int = int(random.random()*len(md))
             r_syn = md[r_int]
             return r_syn['word']
     except:
         return word
-        
-
-#print get_syn('beach')
-
 
 meta_data=requests.get("https://api.datamuse.com/words?ml=beach")
 md= meta_data.json()
@@ -82,27 +82,19 @@ def new_sent(p):
     print "SENTENCE WAS: " + p
     ret_L = []
     p_list = p.split(" ")
-    print p_list
-    print pos_list
     for i in range(len(p_list)):
-        print "element is: " + p_list[i]
-        print "POS id: " + pos_list[i]
-        print "eq NNP : "
-        print pos_list[i] == "NNP"
-        print "eq PRP : "
-        print pos_list[i] == "PRP"
-        print "eq PRP$ : "
-        print pos_list[i] == "PRP$"
+#        print "element is: " + p_list[i]
+#        print "POS id: " + pos_list[i]
 #----------------------CASE #1--------------------------------------------------------------------
     #The element is a period, comma, etc. 
     #The element is a pronoun or proper noun
     #Leave it as is (append it to the list)
 #-------------------------------------------------------------------------------------------------
         if p_list[i] == pos_list[i]:
-            print "case 1"
+#            print "case 1"
             ret_L.append(p_list[i])
-        elif pos_list[i] == "NNP" or "NNPS" or "PRP" or "PRP$":
-            print "case 1 b"
+        elif pos_list[i] == "NNP" or pos_list[i] == "NNPS" or pos_list[i] =="PRP" or pos_list[i] =="PRP$":
+#            print "case 1 b"
             ret_L.append(p_list[i])
 #----------------------CASE #2--------------------------------------------------------------------
     #The element is a verb or adverb
@@ -110,32 +102,32 @@ def new_sent(p):
 #-------------------------------------------------------------------------------------------------
         elif "VB" in pos_list[i] or "RB" in pos_list[i]:
             syn = get_syn(p_list[i])
-            print "case 2"
+#            print "case 2"
             ret_L.append(syn)
 #----------------------CASE #3--------------------------------------------------------------------
     #The element is a noun or adjective
     #Append a synonym AND and adjective for the new synonym
 #-------------------------------------------------------------------------------------------------
-        elif pos_list[i] == "NN" or "NNS" or "JJ":
+        elif pos_list[i] == "NN" or pos_list[i] == "NNS" or pos_list[i] == "JJ":
             syn = get_syn(p_list[i])
             print "SYN is: " + syn
             adj = get_adj(syn)
-            print "ADJ is: " + adj
-            print "case 3"
-            ret_L.append(adj)
-            ret_L.append(syn)
+            if not (adj is None):
+                ret_L.append(adj)
+                ret_L.append(syn)
+            else:
+                ret_L.append(syn)
 #----------------------CASE #4--------------------------------------------------------------------
     #otherwise just append the same element to the ret list
 #-------------------------------------------------------------------------------------------------
         else:
             ret_L.append(p_list[i])
+    print ret_L
     ret = " ".join(ret_L)
+    ret = ret[0].upper() + ret[1:]
     return ret 
-            
 
+print new_sent("How much wood could a woodchuck chuck if a woodchuck could chuck wood?")
 
-print new_sent("I went to the beach.")
-#print new_sent("I love to drink coffee.")
-#print new_sent("Your mom is awesome.")
 
 
