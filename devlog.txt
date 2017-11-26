@@ -66,3 +66,6 @@ Right now it only translates English to English.
 
 karinaI -- 2017-11-26 3:20
 Looked at Azure text analytics API in search of part-of-speech APIs. It also required credit card info. Found textRazor API. It has a limit of 500 requests per day but the API key is easily procurable and it does the job.  
+
+karinaI -- 2017-11-26 4:48
+Changed the sentence changing function to use parts of speech from the textRazor API. This should make the sentences gramatically correct. However I have yet to fix 1 bug: even when the conditional for case 1b in the function renders False, the second part of the conditional is executed. Once that is fixed, the function should be completed. 
