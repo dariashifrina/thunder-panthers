@@ -64,5 +64,5 @@ Finished translation function, basic comic silly phrases in place
 Bug: When converting to a language with foreign characters, there is a problem with conversion.
 Right now it only translates English to English.
 
-karinaI -- 2017-11-26 3:20
+karinaI -- 2017-11-26 3:13
 Looked at Azure text analytics API in search of part-of-speech APIs. It also required credit card info. Found textRazor API. It has a limit of 500 requests per day but the API key is easily procurable and it does the job.  
