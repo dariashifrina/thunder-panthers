@@ -5,7 +5,7 @@ import requests
 
 
 app = Flask(__name__)
- 
+
 #-------------------------------GETTY------------------------------------------------
 getty_key="q7pua4pkzwvj26yakgvnaxvj"
 getty_secret_key="SUmeJueqYaAWVuCFQkCypEepBaUMw4E35j2jB3gGsWayy"
@@ -26,23 +26,13 @@ for i in range(10):
     d['caption']= result['images'][i]['caption']
     ret.append(d)
 
-#print ret         
+#print ret
 
 @app.route('/')
 def getty():
-    return render_template('boo.html', ret=ret)
+    return render_template('index.html', ret=ret)
 
 
 if __name__ == "__main__":
     app.debug = True
     app.run()
-
-
-
-
-
-
-
-
-
-

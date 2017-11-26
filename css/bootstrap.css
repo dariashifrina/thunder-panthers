@@ -124,7 +124,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #E6EBE0;
+  background-color: #F9F7F3; /*E6EBE0 / F9F7F3 */
   padding-bottom: 5rem;
 }
 
@@ -440,6 +440,7 @@ h1, h2, h3, h4, h5, h6,
 
 h1, .h1 {
   font-size: 2.5rem;
+  text-shadow: 5px 5px 5px #E6EBE0;
 }
 
 h2, .h2 {
@@ -448,7 +449,8 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: 1.75rem;
-  color: #9BC1BC;
+  color: #B5E2FA; /*9BC1BC / B5E2FA*/
+  text-shadow: 4px 4px 4px #EFEDEA;
 }
 
 h4, .h4 {
@@ -467,7 +469,8 @@ h6, .h6 {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
-  color: #5D576B;
+  color: #306B34; /*5D576B / 0FA3B1*/
+  text-shadow: 5px 5px 5px #E8E6E3;
 }
 
 .display-1 {
@@ -510,7 +513,8 @@ small,
 .medium {
   font-size: 100%;
   font-weight: 200;
-  color: #5D576B;
+  color: #306B34; /*5D576B / 0FA3B1*/
+  text-shadow: 5px 5px 5px #E8E6E3;
 }
 
 mark,
@@ -1601,7 +1605,7 @@ pre code {
 }
 
 .table-bordered {
-  border: 3px solid #F4F1BB;
+  border: 3px solid #F4F1BB; /*F4F1BB / EDDEA4*/
   border-top-width: 4px;
   border-bottom-width: 4px;
   border-right-width: 4px;
@@ -1609,12 +1613,12 @@ pre code {
   background-color: #FAFCF7;
   color: #3A3A39;
   border-radius: 10px;
-
+  box-shadow: 5px 5px 5px #F2F0ED;
 }
 
 .table-bordered th,
 .table-bordered td {
-  border: 3px solid #F4F1BB;
+  border: 3px solid #F4F1BB; /*F4F1BB / EDDEA4*/
 }
 
 .table-bordered thead th,
@@ -2824,8 +2828,10 @@ fieldset[disabled] a.btn {
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
-  background-color: #9BC1BC;
+  background-color: #B5E2FA; /*9BC1BC / B5E2FA*/
   color: #fff;
+  text-shadow: 5px 5px 5px #A7D1E8;
+  box-shadow: 5px 5px 5px #E6EBE0;
 }
 
 .btn-sm, .btn-group-sm > .btn {
@@ -2833,8 +2839,10 @@ fieldset[disabled] a.btn {
   font-size: 0.875rem;
   line-height: 1.5;
   border-radius: 0.2rem;
-  background-color: #ED6A5A;
+  background-color: #F79E7E; /*ED6A5A / F7A072 / EE4266*/
   color: #fff;
+  text-shadow: 5px 5px 5px #F48668;
+  box-shadow: 4px 4px 4px #E8E6E3;
 }
 
 .btn-block {
@@ -3626,7 +3634,8 @@ tbody.collapse.show {
   -ms-flex-pack: justify;
       justify-content: space-between;
   padding: 0.5rem 1rem;
-  background-color: #ED6A5A;
+  background-color: #F79E7E; /* ED6A5A / F7A072 / EE4266 */
+  text-shadow: 5px 5px 5px #F48668;
 }
 
 .navbar > .container,
