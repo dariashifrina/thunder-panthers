@@ -56,4 +56,5 @@ Used Bootstrap and coolors.co to modify html templates, created new css folder a
 taylorW -- 2017-11-24 4:04
 Added jinja to html files, made aesthetic mods. Added title and name for adding best comics.
 
-
+taylorW -- 2017-11-26 12:30
+Colors and such (I was bored).
