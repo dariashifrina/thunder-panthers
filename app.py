@@ -2,6 +2,7 @@ import urllib2
 import json, urllib2
 from flask import Flask, render_template
 from util import translate
+import datamuse
 #import requests
 
 
@@ -10,13 +11,13 @@ app = Flask(__name__)
 #-------------------------------TRANSLATIONS-----------------------------------------
 @app.route('/comic')
 def comic():
-	norm_phrases = ["We found them. What do you mean?", "What a strange person. Burn her anyway!", "Well, we did do the nose.", "You can't expect to wield supreme power just 'cause some watery tart threw a sword at you!"]
+	norm_phrases = ["Spider-Man went to the store to buy eggs and milk.", "Mr Brown was also at the store because he was buying a computer.", "He saw Spider-Man and was surprised.", "Then they both left the store."]
 	silly_phrases = ["", "", "", ""]
 	for i in range(4):
-		silly_phrase = [norm_phrases[i], "en"]
-		for j in range(10):
+		silly_phrase = [datamuse.new_sent(norm_phrases[i]), "en"]
+		for j in range(3):
 			silly_phrase = translate.translate(silly_phrase)
-		silly_phrases[i] = translate.to_english(silly_phrase)[0]
+		silly_phrases[i] = datamuse.new_sent(translate.to_english(silly_phrase)[0])
 	return render_template("comic.html", norm_phrase1 = norm_phrases[0], norm_phrase2 = norm_phrases[1], norm_phrase3 = norm_phrases[2], norm_phrase4 = norm_phrases[3], silly_phrase1 = silly_phrases[0], silly_phrase2 = silly_phrases[1], silly_phrase3 = silly_phrases[2], silly_phrase4 = silly_phrases[3])
 
 # #-------------------------------GETTY------------------------------------------------

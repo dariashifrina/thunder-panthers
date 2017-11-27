@@ -14,43 +14,39 @@ def rand_lang():
 
 #takes a list of size two with the first element being the text and the second being the language it is in.
 def translate(text):
-	#print "text[0]: " + text[0]
-	#print "text[1]: " + text[1]
+	print "text[0]: " + text[0]
+	print "text[1]: " + text[1]
 	cmd = "https://" + key + '&text=' + urllib.quote(text[0]) + '&lang=' + urllib.quote(text[1]) + '-' + urllib.quote(rand_lang())
-	#print " " + cmd + " "
+	print " " + cmd + " "
 	uResp = urllib2.urlopen(cmd)
-	#print "success"
 	data = uResp.read()
 	d = json.loads(data)
-	#print d
+	print d
 	if d["code"] != 200:
 		print "API error code" + d["code"]
 		return text
 	lang = d["lang"].split("-")[1]
-	#print "lang: " + lang
+	print "lang: " + lang
 	text = d["text"][0].encode('utf-8')
-	#print text
-	#print lang
+	print "text: " + text
 	return [text, lang]
 
 def to_english(text):
-	#print "text[0]: " + text[0]
-	#print "text[1]: " + text[1]
+	print "text[0]: " + text[0]
+	print "text[1]: " + text[1]
 	cmd = "https://" + key + '&text=' + urllib.quote(text[0]) + '&lang=' + text[1] + urllib.quote('-en')
-	#print " " + cmd + " "
+	print " " + cmd + " "
 	uResp = urllib2.urlopen(cmd)
-	#print "success"
 	data = uResp.read()
 	d = json.loads(data)
-	#print d
+	print d
 	if d["code"] != 200:
 		print "API error code" + d["code"]
 		return text
 	lang = d["lang"].split("-")[1]
-	#print "lang: " + lang
+	print "lang: " + lang
 	text = d["text"][0].encode('utf-8')
-	#print text
-	#print lang
+	print "lang: " + text
 	return [text, lang]
 
 #for testing purposes
