@@ -8,7 +8,12 @@ import datamuse
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+        return render_template("index.html")
+
 #-------------------------------TRANSLATIONS-----------------------------------------
+
 @app.route('/comic')
 def comic():
 	norm_phrases = ["Spider-Man went to the store to buy eggs and milk.", "Mr Brown was also at the store because he was buying a computer.", "He saw Spider-Man and was surprised.", "Then they both left the store."]
