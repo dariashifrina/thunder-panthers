@@ -72,6 +72,7 @@ Changed the sentence changing function to use parts of speech from the textRazor
 
 karinaI -- 2017-11-26 18:43
 I fixed the bug and re-discovered that the truth value of a non-empty string is True. The sentence generator works now.
+Modified new_sent(sentence) to work with punctuation. (Jawad pointed out that was an issue)
 
 jawadK -- 2017-11-26 18:30
 Fixed utf-8 encoding error, now translates into other languages properly.
