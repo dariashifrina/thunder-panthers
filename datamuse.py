@@ -79,6 +79,10 @@ L = sentence[:len(sentence)-1].split()
 
 def new_sent(p):
     pos_list = textRazor.pos_list(p)
+    p = p.replace(".", " .")
+    p = p.replace(",", " ,")
+    p = p.replace("!", " !")
+    p = p.replace("?", " ?")
     print "SENTENCE WAS: " + p
     ret_L = []
     p_list = p.split(" ")
@@ -110,7 +114,6 @@ def new_sent(p):
 #-------------------------------------------------------------------------------------------------
         elif pos_list[i] == "NN" or pos_list[i] == "NNS" or pos_list[i] == "JJ":
             syn = get_syn(p_list[i])
-            print "SYN is: " + syn
             adj = get_adj(syn)
             if not (adj is None):
                 ret_L.append(adj)
@@ -122,12 +125,15 @@ def new_sent(p):
 #-------------------------------------------------------------------------------------------------
         else:
             ret_L.append(p_list[i])
-    print ret_L
     ret = " ".join(ret_L)
     ret = ret[0].upper() + ret[1:]
+    ret = ret.replace(" .", ".")
+    ret = ret.replace(" ,", ",")
+    ret = ret.replace(" !", "!")
+    ret = ret.replace(" ?", "?")
     return ret 
 
-print new_sent("How much wood could a woodchuck chuck if a woodchuck could chuck wood?")
+print new_sent("Peter piper picked peppers but Run rock rhyme.")
 
 
 
