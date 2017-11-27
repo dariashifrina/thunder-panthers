@@ -88,3 +88,6 @@ Added base.html to robustify html temaplates using jinja. Worked on trying to so
 
 dariaS -- 2017-11-27 12:57
 Fixed localhost problem by adding static folder and moving css there. Page can now be rendered.
+
+karinaI and jawadK -- 2017-11-27 1:19
+Fixed new_sent(sentence) to work with multiple sentences and thus fixed the bugs on the /comic page. 
