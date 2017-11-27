@@ -19,11 +19,13 @@ def pos_list(sentence):
 
     resp = requests.get("https://api.textrazor.com/", headers = headers, data = data)
     ret = resp.json()
-    parse = ret['response']['sentences'][0]['words']
-    ret = []
-    for i in range(len(parse)):
-        ret.append(parse[i]['partOfSpeech'])
-    return ret
+    to_ret = []
+    
+    for x in range(len(ret['response']['sentences'])):
+        parse = ret['response']['sentences'][x]['words']
+        for i in range(len(parse)):
+            to_ret.append(parse[i]['partOfSpeech'])
+    return to_ret
 
 
 

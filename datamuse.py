@@ -78,14 +78,22 @@ sentence = "I went to the store."
 L = sentence[:len(sentence)-1].split()
 
 def new_sent(p):
-    pos_list = textRazor.pos_list(p)
+
     p = p.replace(".", " .")
     p = p.replace(",", " ,")
     p = p.replace("!", " !")
     p = p.replace("?", " ?")
-    print "SENTENCE WAS: " + p
+    pos_list = textRazor.pos_list(p)
+    
+
+
     ret_L = []
     p_list = p.split(" ")
+
+#    print p_list
+#    print pos_list
+
+
     for i in range(len(p_list)):
 #        print "element is: " + p_list[i]
 #        print "POS id: " + pos_list[i]
@@ -94,7 +102,10 @@ def new_sent(p):
     #The element is a pronoun or proper noun
     #Leave it as is (append it to the list)
 #-------------------------------------------------------------------------------------------------
-        if p_list[i] == pos_list[i]:
+        if p_list[i] == "Mr." or p_list[i] =="Mrs." or p_list[i] == "Dr.":
+            ret_L.append(p_list[i])
+
+        elif p_list[i] == pos_list[i]:
 #            print "case 1"
             ret_L.append(p_list[i])
         elif pos_list[i] == "NNP" or pos_list[i] == "NNPS" or pos_list[i] =="PRP" or pos_list[i] =="PRP$":
@@ -133,7 +144,7 @@ def new_sent(p):
     ret = ret.replace(" ?", "?")
     return ret 
 
-print new_sent("Peter piper picked peppers but Run rock rhyme.")
+print new_sent("I want to eat some food. I want to fly.")
 
 
 
