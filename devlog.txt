@@ -65,10 +65,14 @@ Bug: When converting to a language with foreign characters, there is a problem w
 Right now it only translates English to English.
 
 karinaI -- 2017-11-26 15:20
-Looked at Azure text analytics API in search of part-of-speech APIs. It also required credit card info. Found textRazor API. It has a limit of 500 requests per day but the API key is easily procurable and it does the job.  
+Looked at Azure text analytics API in search of part-of-speech APIs. It also required credit card info. Found textRazor API. It has a limit of 500 requests per day but the API key is easily procurable and it does the job.
 
 karinaI -- 2017-11-26 16:48
-Changed the sentence changing function to use parts of speech from the textRazor API. This should make the sentences gramatically correct. However I have yet to fix 1 bug: even when the conditional for case 1b in the function renders False, the second part of the conditional is executed. Once that is fixed, the function should be completed. 
+Changed the sentence changing function to use parts of speech from the textRazor API. This should make the sentences gramatically correct. However I have yet to fix 1 bug: even when the conditional for case 1b in the function renders False, the second part of the conditional is executed. Once that is fixed, the function should be completed.
 
 karinaI -- 2017-11-26 18:43
-I fixed the bug and re-discovered that the truth value of a non-empty string is True. The sentence generator works now. 
+I fixed the bug and re-discovered that the truth value of a non-empty string is True. The sentence generator works now.
+
+jawadK -- 2017-11-26 18:30
+Fixed utf-8 encoding error, now translates into other languages properly.
+A big problem is that it takes very long to translate even a few times.

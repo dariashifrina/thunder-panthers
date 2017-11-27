@@ -14,9 +14,9 @@ def comic():
 	silly_phrases = ["", "", "", ""]
 	for i in range(4):
 		silly_phrase = [norm_phrases[i], "en"]
-		for j in range(15):
+		for j in range(10):
 			silly_phrase = translate.translate(silly_phrase)
-		silly_phrases[i] = silly_phrase[0]
+		silly_phrases[i] = translate.to_english(silly_phrase)[0]
 	return render_template("comic.html", norm_phrase1 = norm_phrases[0], norm_phrase2 = norm_phrases[1], norm_phrase3 = norm_phrases[2], norm_phrase4 = norm_phrases[3], silly_phrase1 = silly_phrases[0], silly_phrase2 = silly_phrases[1], silly_phrase3 = silly_phrases[2], silly_phrase4 = silly_phrases[3])
 
 # #-------------------------------GETTY------------------------------------------------
