@@ -82,3 +82,6 @@ jawadK -- 2017-11-26 21:55
 Implemented synonyms into comic generation
 A big problem is that when looking for synonyms of a sentence with a period within it, it gives an index error
 This is magnified by the fact that certain translations create periods within the sentence
+
+taylorW -- 2017-11-26 23:01
+Added base.html to robustify html temaplates using jinja. Worked on trying to solve 404 css/localhost problems.
