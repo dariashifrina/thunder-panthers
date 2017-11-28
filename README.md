@@ -11,6 +11,7 @@ You need:
 1. the requests library and a virtual environment
 2. your own API key
 3. a sense of humor
+
 Follow the code to get requests and a virtualenv. 
 ```bash
 $ virtualenv venv
