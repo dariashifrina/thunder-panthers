@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+<body>
+
+<br>
+ 
+<h1> Sentence: {{sentence}} <br>  Phrase: {{phrase}} </h1>
+
+
+{% for item in ret %}
+
+<b> Title: </b> {{item['title']}}
+<br>
+<br>
+<img src={{item['uri']}}>
+<br> <br>
+
+<b> Caption: </b> <br>
+{{item['caption']}}
+
+<hr>
+{% endfor %}
+
+
+</body>
+</html>

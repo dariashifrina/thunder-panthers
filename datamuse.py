@@ -144,7 +144,47 @@ def new_sent(p):
     ret = ret.replace(" ?", "?")
     return ret 
 
-print new_sent("I want to eat some food. I want to fly.")
+#print new_sent("I want to eat some food. I want to fly.")
 
 
+def img_text(p):
 
+    p = p.replace(".", " .")
+    p = p.replace(",", " ,")
+    p = p.replace("!", " !")
+    p = p.replace("?", " ?")
+    pos_list = textRazor.pos_list(p)
+    ret_L = []
+    p_list = p.split(" ")
+
+    for i in range(len(p_list)):
+        '''
+        print i
+        print "pos: " + pos_list[i] 
+        print "word: " + p_list[i] 
+        print "------------"
+        print str(i) + " > 0"
+        print pos_list[i - 1] + " == JJ "
+        '''
+
+        if "NN" in pos_list[i] or pos_list[i] =="PRP" or pos_list[i] =="PRP$":
+            #something like big apple
+            if i > 0 and (pos_list[i - 1] == "JJ"):
+#                print "case 1"
+                ret_L.append(p_list[i - 1] + " " + p_list[i])
+            # something like panther runs
+            elif i < len(p_list) - 1 and "VB" in pos_list[i + 1]:
+#                print "case 2"
+                ret_L.append( p_list[i] + " " + p_list[i + 1])
+
+            else:
+#                print "case 3"
+                ret_L.append(p_list[i])
+    if ret_L == []:
+        return "blank"
+    elif len(ret_L) == 1:
+        return ret_L[0]
+    else:
+        return ret_L[1]
+
+print img_text("I went to the big apple")
