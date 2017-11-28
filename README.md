@@ -28,4 +28,4 @@ Copy the API Key as it appears in the grey box once you sign up, and then paste 
 <p align="center">
 <img src="http://i63.tinypic.com/2j35l3r.png">
 </p>
-***
+
