@@ -92,5 +92,5 @@ Fixed localhost problem by adding static folder and moving css there. Page can n
 karinaI and jawadK -- 2017-11-27 13:19
 Fixed new_sent(sentence) to work with multiple sentences and thus fixed the bugs on the /comic page. 
 
-karinaI -- 2017-11-28 12:13
+karinaI -- 2017-11-28 0:13
 Created img_text(sentence) function which takes a sentence and parses it to generate a list containing possible phrases for the comic strip image. For example: "The elephant runs to the big store." produces ["elephant runs", "big store"]. Also created /getty route which demonstrates img_text functionality and offers multiple image options with descriptions from the getty API. 
