@@ -6,7 +6,7 @@
 
 <br>
  
-<h1> Sentence: {{sentence}} <br>  </h1>
+<h1> Sentence: {{sentence}} <br>  Phrase: {{phrase}} </h1>
 
 
 {% for item in ret %}
