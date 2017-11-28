@@ -20,7 +20,7 @@ def comic():
 	silly_phrases = ["", "", "", ""]
 	for i in range(4):
 		silly_phrase = [datamuse.new_sent(norm_phrases[i]), "en"]
-		for j in range(3):
+		for j in range(20):
 			silly_phrase = translate.translate(silly_phrase)
 		silly_phrases[i] = datamuse.new_sent(translate.to_english(silly_phrase)[0])
 	return render_template("comic.html", norm_phrase1 = norm_phrases[0], norm_phrase2 = norm_phrases[1], norm_phrase3 = norm_phrases[2], norm_phrase4 = norm_phrases[3], silly_phrase1 = silly_phrases[0], silly_phrase2 = silly_phrases[1], silly_phrase3 = silly_phrases[2], silly_phrase4 = silly_phrases[3])
