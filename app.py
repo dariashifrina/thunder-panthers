@@ -1,12 +1,12 @@
-import urllib2, requests
-import json, urllib2
-from flask import Flask, render_template, request, redirect
+import json, urllib2, os, requests
+from flask import Flask, render_template, request, redirect, flash, url_for
 from util import translate, feed_help
 import datamuse
 #import requests
 
 
 app = Flask(__name__)
+app.secret_key = os.urandom(32)
 
 @app.route("/")
 def home():
@@ -27,11 +27,24 @@ def feed():
         comicdict = feed_help.get_dict()
         return render_template("feed.html", comics = comicdict)
 
-#-------------------------------TRANSLATIONS-----------------------------------------
+#-------------------------------COMIC-----------------------------------------
 
-@app.route('/comic')
+@app.route('/comic', methods=["POST", "GET"])
 def comic():
-	norm_phrases = ["Spider-Man went to the store to buy eggs and milk.", "Mr Brown was also at the store because he was buying a computer.", "He saw Spider-Man and was surprised.", "Then they both left the store."]
+	if request.method == "GET":
+		flash('Sentence format incorrect')
+		return redirect(url_for('home'))
+	r = request.form
+	for phrase in ['phrase1', 'phrase2', 'phrase3', 'phrase4']:
+		try:
+			datamuse.new_sent(r[phrase])
+		except IndexError:
+			flash('Sentence format incorrect')
+			return redirect(url_for('home'))
+		if len(r[phrase]) > 150:
+			flash('Please limit your sentences to 150 characters')
+			return redirect(url_for('home'))
+	norm_phrases = [r['phrase1'], r['phrase2'], r['phrase3'], r['phrase4']]
 	silly_phrases = ["", "", "", ""]
 	for i in range(4):
 		while True:
