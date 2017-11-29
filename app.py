@@ -60,7 +60,7 @@ def comic():
 				silly_phrase = [datamuse.new_sent(norm_phrases[i]), "en"]
 				for j in range(3):
 					silly_phrase = translate.translate(silly_phrase)
-				silly_phrases[i] = datamuse.new_sent(translate.to_english(silly_phrase)[0])
+				silly_phrases[i] = datamuse.new_sent(translate.to_english(silly_phrase)[0]).decode()
 				break
 			except (UnicodeDecodeError, IndexError):
 				pass
