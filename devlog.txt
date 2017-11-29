@@ -23,7 +23,7 @@ Final idea: decided to use Words API and Getty Images APIs to create a comic str
 dariaS -- 2017-11-15 21:33
 Created devlog.
 
-jawadK -- 2017-11-15 23:00
+jawadulK -- 2017-11-15 23:00
 Created component map.
 
 karinaI -- 2017-11-15 22:00
@@ -44,7 +44,7 @@ Worked on parsing strings to find nouns and then getting synonyms for those noun
 taylorW -- 2017-11-19 13:10
 Implementing basic Bootsrap for index.html.
 
-jawadK -- 2017-11-22 13:18
+jawadulK -- 2017-11-22 13:18
 Started translation functions. Basically pseudocode at the moment.
 
 karinaI -- 2017-11-24 11:32
@@ -59,7 +59,7 @@ Added jinja to html files, made aesthetic mods. Added title and name for adding 
 taylorW -- 2017-11-26 00:30
 Colors and such (I was bored).
 
-jawadK -- 2017-11-26 3:18
+jawadulK -- 2017-11-26 3:18
 Finished translation function, basic comic silly phrases in place
 Bug: When converting to a language with foreign characters, there is a problem with conversion.
 Right now it only translates English to English.
@@ -72,13 +72,13 @@ Changed the sentence changing function to use parts of speech from the textRazor
 
 karinaI -- 2017-11-26 18:43
 I fixed the bug and re-discovered that the truth value of a non-empty string is True. The sentence generator works now.
-Modified new_sent(sentence) to work with punctuation. (Jawad pointed out that was an issue)
+Modified new_sent(sentence) to work with punctuation. (jawadul pointed out that was an issue)
 
-jawadK -- 2017-11-26 18:30
+jawadulK -- 2017-11-26 18:30
 Fixed utf-8 encoding error, now translates into other languages properly.
 A big problem is that it takes very long to translate even a few times.
 
-jawadK -- 2017-11-26 21:55
+jawadulK -- 2017-11-26 21:55
 Implemented synonyms into comic generation
 A big problem is that when looking for synonyms of a sentence with a period within it, it gives an index error
 This is magnified by the fact that certain translations create periods within the sentence
@@ -89,14 +89,17 @@ Added base.html to robustify html temaplates using jinja. Worked on trying to so
 dariaS -- 2017-11-27 12:57
 Fixed localhost problem by adding static folder and moving css there. Page can now be rendered.
 
-karinaI and jawadK -- 2017-11-27 13:19
-Fixed new_sent(sentence) to work with multiple sentences and thus fixed the bugs on the /comic page. 
+karinaI and jawadulK -- 2017-11-27 13:19
+Fixed new_sent(sentence) to work with multiple sentences and thus fixed the bugs on the /comic page.
 
 dariaS -- 2017-11-27 22:59
 Updated README with clear launching instructions.
 
 karinaI -- 2017-11-28 0:13
-Created img_text(sentence) function which takes a sentence and parses it to generate a list containing possible phrases for the comic strip image. For example: "The elephant runs to the big store." produces ["elephant runs", "big store"]. Also created /getty route which demonstrates img_text functionality and offers multiple image options with descriptions from the getty API. 
+Created img_text(sentence) function which takes a sentence and parses it to generate a list containing possible phrases for the comic strip image. For example: "The elephant runs to the big store." produces ["elephant runs", "big store"]. Also created /getty route which demonstrates img_text functionality and offers multiple image options with descriptions from the getty API.
 
 dariaS -- 2017-11-28 1:00
-Added SQL database for saving funny comics. 
+Added SQL database for saving funny comics.
+
+jawadulK -- 2017-11-26 20:12
+Implemented a loop that repeatedly tries to mash sentences because inconsistencies in the translation output are inevitable.
