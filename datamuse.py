@@ -16,7 +16,7 @@ Means like constraint: require that the results have a meaning related to this s
 
 rel_[code]:
 
-Related word constraints: require that the results, when paired with the word in this parameter, are in a predefined lexical relation indicated by [code]. Any number of these parameters may be specified any number of times. An assortment of semantic, phonetic, and corpus-statistics-based relations are available. At this time, these relations are available for English-language vocabularies only. 
+Related word constraints: require that the results, when paired with the word in this parameter, are in a predefined lexical relation indicated by [code]. Any number of these parameters may be specified any number of times. An assortment of semantic, phonetic, and corpus-statistics-based relations are available. At this time, these relations are available for English-language vocabularies only.
 
 md:
 
@@ -40,7 +40,7 @@ def get_adj(word):
         r_int = int(random.random()*len(md))
         r_adj = md[r_int]
         return r_adj['word']
-    
+
 
 
 def get_syn(word):
@@ -70,14 +70,14 @@ md= meta_data.json()
 sentence = "I went to the store."
 L = sentence[:len(sentence)-1].split()
 
-def new_sent(p):
+def new_sent(p, api_key):
 
     p = p.replace(".", " .")
     p = p.replace(",", " ,")
     p = p.replace("!", " !")
     p = p.replace("?", " ?")
-    pos_list = textRazor.pos_list(p)
-    
+    pos_list = textRazor.pos_list(p, api_key)
+
 
 
     ret_L = []
@@ -91,7 +91,7 @@ def new_sent(p):
 #        print "element is: " + p_list[i]
 #        print "POS id: " + pos_list[i]
 #----------------------CASE #1--------------------------------------------------------------------
-    #The element is a period, comma, etc. 
+    #The element is a period, comma, etc.
     #The element is a pronoun or proper noun
     #Leave it as is (append it to the list)
 #-------------------------------------------------------------------------------------------------
@@ -135,27 +135,27 @@ def new_sent(p):
     ret = ret.replace(" ,", ",")
     ret = ret.replace(" !", "!")
     ret = ret.replace(" ?", "?")
-    return ret 
+    return ret
 
 #print new_sent("I want to eat some food. I want to fly.")
 
 
-def img_text(p):
+def img_text(p, api_key):
 
     p = p.replace(".", " .")
     p = p.replace(",", " ,")
     p = p.replace("!", " !")
     p = p.replace("?", " ?")
-    pos_list = textRazor.pos_list(p)
+    pos_list = textRazor.pos_list(p, api_key)
     ret_L = []
     p_list = p.split(" ")
-    
+
 
     for i in range(len(p_list)):
         '''
         print i
-        print "pos: " + pos_list[i] 
-        print "word: " + p_list[i] 
+        print "pos: " + pos_list[i]
+        print "word: " + p_list[i]
         print "------------"
         print str(i) + " > 0"
         print pos_list[i - 1] + " == JJ "

@@ -39,7 +39,7 @@ def comic():
 		print r
 	for phrase in ['phrase1', 'phrase2', 'phrase3', 'phrase4']:
 		try:
-			datamuse.new_sent(r[phrase])
+			datamuse.new_sent(r[phrase], r['textRazorApiKey'])
 		except IndexError:
 			flash('Sentence format incorrect')
 			return redirect(url_for('home'))
@@ -52,32 +52,30 @@ def comic():
 	for i in range(4):
 		while True:
 			try:
-				silly_phrase = [datamuse.new_sent(norm_phrases[i]), "en"]
+				silly_phrase = [datamuse.new_sent(norm_phrases[i], r['textRazorApiKey']), "en"]
 				for j in range(silliness):
-					silly_phrase = translate.translate(silly_phrase)
+					silly_phrase = translate.translate(silly_phrase, r['yandexTranslateApiKey'])
 				if silliness > 3:
-					silly_phrases[i] = datamuse.new_sent(translate.to_english(silly_phrase)[0]).decode()
+					silly_phrases[i] = datamuse.new_sent(translate.to_english(silly_phrase, r['yandexTranslateApiKey'])[0], r['textRazorApiKey']).decode()
 				else:
-					silly_phrases[i] = translate.to_english(silly_phrase)[0].decode()
+					silly_phrases[i] = translate.to_english(silly_phrase, r['yandexTranslateApiKey'])[0].decode()
 				break
 			except (UnicodeDecodeError, IndexError):
 				pass
 	print norm_phrases
 	print silly_phrases
-	return render_template("comic.html", norm_phrase1 = norm_phrases[0], norm_phrase2 = norm_phrases[1], norm_phrase3 = norm_phrases[2], norm_phrase4 = norm_phrases[3], silly_phrase1 = silly_phrases[0], silly_phrase2 = silly_phrases[1], silly_phrase3 = silly_phrases[2], silly_phrase4 = silly_phrases[3], norm_url1 = img_url(norm_phrases[0]) , norm_url2 = img_url(norm_phrases[1]) , norm_url3 = img_url(norm_phrases[2]) , norm_url4 = img_url(norm_phrases[3]) , silly_url1 = img_url(silly_phrases[0]), silly_url2 = img_url(silly_phrases[1]), silly_url3 = img_url(silly_phrases[2]), silly_url4 = img_url(silly_phrases[3]) )
+	return render_template("comic.html", norm_phrase1 = norm_phrases[0], norm_phrase2 = norm_phrases[1], norm_phrase3 = norm_phrases[2], norm_phrase4 = norm_phrases[3], silly_phrase1 = silly_phrases[0], silly_phrase2 = silly_phrases[1], silly_phrase3 = silly_phrases[2], silly_phrase4 = silly_phrases[3], norm_url1 = img_url(norm_phrases[0], r['gettyImagesApiKey'], r['textRazorApiKey']) , norm_url2 = img_url(norm_phrases[1], r['gettyImagesApiKey'], r['textRazorApiKey']) , norm_url3 = img_url(norm_phrases[2], r['gettyImagesApiKey'], r['textRazorApiKey']) , norm_url4 = img_url(norm_phrases[3], r['gettyImagesApiKey'], r['textRazorApiKey']) , silly_url1 = img_url(silly_phrases[0], r['gettyImagesApiKey'], r['textRazorApiKey']), silly_url2 = img_url(silly_phrases[1], r['gettyImagesApiKey'], r['textRazorApiKey']), silly_url3 = img_url(silly_phrases[2], r['gettyImagesApiKey'], r['textRazorApiKey']), silly_url4 = img_url(silly_phrases[3], r['gettyImagesApiKey'], r['textRazorApiKey']) )
 # #-------------------------------GETTY------------------------------------------------
 
 
 
-def img_url(sentence):
+def img_url(sentence, getty_key, text_razor_key):
 	print "the sentence is: " + sentence
 
-	phrase = datamuse.img_text(sentence)
+	phrase = datamuse.img_text(sentence, text_razor_key)
 	print "the phrase is: " + phrase
-	getty_key="q7pua4pkzwvj26yakgvnaxvj"
-	getty_secret_key="SUmeJueqYaAWVuCFQkCypEepBaUMw4E35j2jB3gGsWayy"
 
-	headers = { 'Api-Key': 'q7pua4pkzwvj26yakgvnaxvj'}
+	headers = { 'Api-Key': getty_key}
 	params = {'phrase': phrase}
 	url = 'https://api.gettyimages.com/v3/search/images'
 	resp= requests.get(url, headers=headers, params=params)
@@ -91,12 +89,6 @@ def img_url(sentence):
 	else:
 		d = "http://newparent.com/wp-content/uploads/2008/10/surprised-baby.jpg"
 	return d
-
-
-@app.route('/getty')
-def getty():
-	return render_template('getty.html', sentence=sentence, ret= img_url(sentence))
-#
 
 if __name__ == "__main__":
     app.debug = True

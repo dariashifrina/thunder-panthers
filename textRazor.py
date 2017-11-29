@@ -1,8 +1,6 @@
 import requests, json
 
-api_key= "148e227fcabda9b5a999f56157b6d2ef00d077b9cc6ec64468b7eb3a"
-
-def pos_list(sentence):
+def pos_list(sentence, api_key):
 
     print "--------SENTENCE=-----: " + sentence
     '''
@@ -22,7 +20,7 @@ def pos_list(sentence):
     ret = resp.json()
 
     to_ret = []
-    
+
     for x in range(len(ret['response']['sentences'])):
         parse = ret['response']['sentences'][x]['words']
         for i in range(len(parse)):
@@ -33,7 +31,7 @@ def pos_list(sentence):
 
 '''
 RESULT:
-UH 
+UH
 ,
 PRP
 VBP
