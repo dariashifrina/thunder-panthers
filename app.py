@@ -54,7 +54,7 @@ def comic():
 					silly_phrase = translate.translate(silly_phrase)
 				silly_phrases[i] = datamuse.new_sent(translate.to_english(silly_phrase)[0])
 				break
-			except IndexError:
+			except (UnicodeDecodeError, IndexError):
 				pass
 	return render_template("comic.html", norm_phrase1 = norm_phrases[0], norm_phrase2 = norm_phrases[1], norm_phrase3 = norm_phrases[2], norm_phrase4 = norm_phrases[3], silly_phrase1 = silly_phrases[0], silly_phrase2 = silly_phrases[1], silly_phrase3 = silly_phrases[2], silly_phrase4 = silly_phrases[3], norm_url1 = img_url(norm_phrases[0]) , norm_url2 = img_url(norm_phrases[1]) , norm_url3 = img_url(norm_phrases[2]) , norm_url4 = img_url(norm_phrases[3]) , silly_url1 = img_url(silly_phrases[0]), silly_url2 = img_url(silly_phrases[1]), silly_url3 = img_url(silly_phrases[2]), silly_url4 = img_url(silly_phrases[3]) )
 # #-------------------------------GETTY------------------------------------------------
@@ -63,7 +63,7 @@ def comic():
 
 def img_url(sentence):
 	print "the sentence is: " + sentence
-	
+
 	phrase = datamuse.img_text(sentence)
 	print "the phrase is: " + phrase
 	getty_key="q7pua4pkzwvj26yakgvnaxvj"

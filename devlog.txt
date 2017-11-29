@@ -104,5 +104,8 @@ Added SQL database for saving funny comics.
 jawadulK -- 2017-11-26 20:12
 Implemented a loop that repeatedly tries to mash sentences because inconsistencies in the translation output are inevitable.
 
+jawadulK -- 2017-11-26 21:13
+Made the index page send a POST request to the comic function, which reads the data and uses it.
+
 karinaI -- 2017-11-26 21:39
 Updated img_text(sentence) and img_url(sentence) to get rid of bugs and improve image accuracy by returning random elements of the img_text phrases list (and avoiding first element if possible.)
