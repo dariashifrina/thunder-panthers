@@ -101,6 +101,12 @@ Created img_text(sentence) function which takes a sentence and parses it to gene
 dariaS -- 2017-11-28 1:00
 Added SQL database for saving funny comics.
 
+dariaS -- 2017-11-28 18:20
+Created util for feed. Reworked structure of database so that it wouldn't redundantly store the same piece of HTML, instead it will store all individual components to be displayed through the while loop. Worked on adding new entries and converting db table into a dictionary. 
+
+dariaS -- 2017-11-28 19:15
+Debugged feed util fxns through app.py. Did not have a chance to test with silly comics yet. 
+
 jawadulK -- 2017-11-26 20:12
 Implemented a loop that repeatedly tries to mash sentences because inconsistencies in the translation output are inevitable.
 
@@ -118,3 +124,7 @@ Making vaious edits including level dropdown, message flashing, submitting, and 
 
 jawadulK -- 2017-11-26 00:45
 Implemented different levels of silliness
+
+dariaS -- 2017-11-29 1:30
+Feed works whoop whoop!!! Fixed minor HTML error in frontend that only passed the first word of every silly phrase, which messed with the entire process of rendering the comic. 
+
