@@ -5,48 +5,80 @@ INDEX
 {% endblock %}
 
 {% block content %}
-    <main role="main" class="container">
+<main role="main" class="container">
 
-      <div class="starter-template">
-        <h1>Welcome to Humorous Slip</h1>
-        <p class="lead">
-          Type in four phrases below, and we'll generate two comics for you:
+  <div class="starter-template">
+    <h1>Welcome to Humorous Slip!</h1>
+      <p class="lead">
+        Input four phrases and the additional information below, and we'll generate two comics for you:
+          <h3>Normal Comic:</h3> <p class="medium">Generated directly from the phrases you gave.</p>
+          <h3>Silly Comic:</h3> <p class="medium">Generated through language translation and word association.</p>
+      </p>
 
-          <p class="medium">
-            1. A normal comic generated directly from the phrases you gave.
-            <br>
-            2. A silly comic generated through language translation and word association.
-          </p>
+  </div>
 
-        </p>
+  <!-- Form -->
+  <div class="container">
+    <!-- change names based on app.py, CHANGE TO POST-->
+    <form class="form-input" method="GET">
 
+      <!-- Phrases -->
+      <h3>Phrases</h3>
+
+      <label for="inputPhrase1" class="sr-only">Phrase #1</label>
+      <input type="phrase1" name="phrase1" id="inputPhrase1" class="form-control" placeholder="Phrase #1" required>
+
+      <label for="inputPhrase2" class="sr-only">Phrase #2</label>
+      <input type="phrase2" name="phrase2" id="inputPhrase2" class="form-control" placeholder="Phrase #2" required>
+
+      <label for="inputPhrase3" class="sr-only">Phrase #3</label>
+      <input type="phrase3" name="phrase3" id="inputPhrase3" class="form-control" placeholder="Phrase #3" required>
+
+      <label for="inputPhrase4" class="sr-only">Phrase #4</label>
+      <input type="phrase4" name="phrase4" id="inputPhrase4" class="form-control" placeholder="Phrase #4" required>
+
+      <br>
+
+      <!-- API Key -->
+      <h3>TextRazor API Key<small><font color="#F79E7E">*</font></small></h3>
+      <label for="inputApi" class="sr-only">Api Key</label>
+      <input type="phrase2" name="apiKey" id="inputApi" class="form-control" placeholder="Your API Key here." required>
+
+      <small id="form_details" class="form-text text-muted"><large><font color="#F79E7E">*</font></large> If you don't have a TextRazor API Key, you can procure one <a href="https://www.textrazor.com/signup">here</a>. Copy the API Key as it appears in the grey box once you sign up, and then paste it above. </small>
+
+      <br>
+
+      <!-- Silliness Level -->
+      <h3>Silliness Level</h3>
+      <div id="slidecontainer">
+        <table class="table table-bordered">
+          <tr>
+            <td>
+              <center>
+                <label class="radio-inline"><input type="radio" name="level" value="1">1</label>
+                <label class="radio-inline"><input type="radio" name="level" value="2">2</label>
+                <label class="radio-inline"><input type="radio" name="level" value="3">3</label>
+                <label class="radio-inline"><input type="radio" name="level" value="4">4</label>
+                <label class="radio-inline"><input type="radio" name="level" value="5">5</label>
+              </center>
+            </td>
+          </tr>
+        </table>
       </div>
 
-      <!-- Form -->
-      <div class="container">
-        <!-- change names based on app.py, CHANGE TO POST-->
-        <form class="form-input" method="POST" action="comic">
+      <br>
 
-          <label for="inputPhrase1" class="sr-only">Phrase #1</label>
-          <input type="phrase1" name="phrase1" id="inputPhrase1" class="form-control" placeholder="Phrase #1" required>
+      <a href="/comic">
+      <button class="btn btn-lg btn-block" type="submit">Generate my Comic!</button>
+      </a>
 
-          <label for="inputPhrase2" class="sr-only">Phrase #2</label>
-          <input type="phrase2" name="phrase2" id="inputPhrase2" class="form-control" placeholder="Phrase #2" required>
+    </form>
+  </div>
 
-          <label for="inputPhrase3" class="sr-only">Phrase #3</label>
-          <input type="phrase3" name="phrase3" id="inputPhrase3" class="form-control" placeholder="Phrase #3" required>
+</main>
 
-          <label for="inputPhrase4" class="sr-only">Phrase #4</label>
-          <input type="phrase4" name="phrase4" id="inputPhrase4" class="form-control" placeholder="Phrase #4" required>
 
-          <a href="/comic">
-          <button class="btn btn-lg btn-block" type="submit">Generate my Comic!</button>
-          </a>
-
-        </form>
-      </div>
-
-    </main><!-- /.container -->
+    <!-- /.container -->
 
 
     <!-- Bootstrap core JavaScript ***FIX LATER***
@@ -57,5 +89,27 @@ INDEX
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
     <script src="../../../../dist/js/bootstrap.min.js"></script>
     -->
+    <script>
+    var rangeSlider = function(){
+      var slider = $('.range-slider'),
+          range = $('.range-slider__range'),
+          value = $('.range-slider__value');
+
+      slider.each(function(){
+
+        value.each(function(){
+          var value = $(this).prev().attr('value');
+          $(this).html(value);
+        });
+
+        range.on('input', function(){
+          $(this).next(value).html(this.value);
+        });
+      });
+    };
+
+    rangeSlider();
+    </script>
+
 
 {% endblock %}
