@@ -20,7 +20,7 @@ def pos_list(sentence):
 
     resp = requests.get("https://api.textrazor.com/", headers = headers, data = data)
     ret = resp.json()
-    print ret
+
     to_ret = []
     
     for x in range(len(ret['response']['sentences'])):

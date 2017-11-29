@@ -82,17 +82,14 @@ def img_url(sentence):
 	url = 'https://api.gettyimages.com/v3/search/images'
 	resp= requests.get(url, headers=headers, params=params)
 	result = resp.json()
-	print "--------RESULT--------"
-	print result
+
 	d = {}
 	ret = []
 	if result['images'] != []:
 		inner_dict = result['images'][0]['display_sizes'][0]
 		d = inner_dict['uri']
 	else:
-		d = "https://i.ytimg.com/vi/K4zm30yeHHE/maxresdefault.jpg"
-
-
+		d = "http://newparent.com/wp-content/uploads/2008/10/surprised-baby.jpg"
 	return d
 
 

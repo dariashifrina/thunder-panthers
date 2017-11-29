@@ -1,9 +1,10 @@
 import requests, json
 
-api_key= "ee8df0e3a42d45d65c21ed41c6b1975f913d7050dfc40c5301826758"
+api_key= "148e227fcabda9b5a999f56157b6d2ef00d077b9cc6ec64468b7eb3a"
 
 def pos_list(sentence):
 
+    print "--------SENTENCE=-----: " + sentence
     '''
     FUNCTION RETURNS LIST OF PARTS OF SPEECH
     '''
@@ -19,6 +20,7 @@ def pos_list(sentence):
 
     resp = requests.get("https://api.textrazor.com/", headers = headers, data = data)
     ret = resp.json()
+    print ret
     to_ret = []
     
     for x in range(len(ret['response']['sentences'])):
