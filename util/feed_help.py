@@ -1,9 +1,9 @@
 #helper file for rendering comics
 
 import sqlite3
+f = "data/funnies.db"
 
 def add_entry(title, name, sillyurl1, sillyurl2, sillyurl3, sillyurl4, sillyphrase1, sillyphrase2, sillyphrase3, sillyphrase4):
-    f = "data/funnies.db"
     db = sqlite3.connect(f)
     c = db.cursor()
     command = "INSERT INTO funnies VALUES ('" + title + "','" + name + "','" + sillyurl1 + "','" + sillyurl2 + "','" + sillyurl3 + "','" + sillyurl4 + "','" + sillyphrase1 + "','" + sillyphrase2 + "','" + sillyphrase3 + "','" + sillyphrase4 + "')"
@@ -40,8 +40,7 @@ def get_dict():
         dict_stuff[title]['sillyphrase2'] = sillyphrase2
         dict_stuff[title]['sillyphrase3'] = sillyphrase3
         dict_stuff[title]['sillyphrase4'] = sillyphrase4
-        db.commit()
-        db.close()
+    db.commit()
+    db.close()
     return dict_stuff
-
 

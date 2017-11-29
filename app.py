@@ -16,7 +16,7 @@ def home():
 def editfeed():
         r = request.args
         if "title" in r and "name" in r:
-                print "yay"
+                print r["phrase1"]
                 feed_help.add_entry(  r["title"], r["name"], r["pic1"], r["pic2"], r["pic3"], r["pic4"], r["phrase1"], r["phrase2"], r["phrase3"], r["phrase4"])
         else:
                 print "nay"
