@@ -37,13 +37,7 @@ def comic():
 	else:
 		r = request.form
 		print r
-	if 'apiKey' not in r:
-		flash('Please provide four proper phrases and an API key')
-		return redirect(url_for('home'))
 	for phrase in ['phrase1', 'phrase2', 'phrase3', 'phrase4']:
-		if phrase not in r:
-			flash('Sentence format incorrect')
-			return redirect(url_for('home'))
 		try:
 			datamuse.new_sent(r[phrase])
 		except IndexError:
@@ -52,18 +46,24 @@ def comic():
 		if len(r[phrase]) > 150:
 			flash('Please limit your sentences to 150 characters')
 			return redirect(url_for('home'))
+	silliness = int(r['silliness'])
 	norm_phrases = [r['phrase1'], r['phrase2'], r['phrase3'], r['phrase4']]
 	silly_phrases = ["", "", "", ""]
 	for i in range(4):
 		while True:
 			try:
 				silly_phrase = [datamuse.new_sent(norm_phrases[i]), "en"]
-				for j in range(3):
+				for j in range(silliness):
 					silly_phrase = translate.translate(silly_phrase)
-				silly_phrases[i] = datamuse.new_sent(translate.to_english(silly_phrase)[0]).decode()
+				if silliness > 3:
+					silly_phrases[i] = datamuse.new_sent(translate.to_english(silly_phrase)[0]).decode()
+				else:
+					silly_phrases[i] = translate.to_english(silly_phrase)[0].decode()
 				break
 			except (UnicodeDecodeError, IndexError):
 				pass
+	print norm_phrases
+	print silly_phrases
 	return render_template("comic.html", norm_phrase1 = norm_phrases[0], norm_phrase2 = norm_phrases[1], norm_phrase3 = norm_phrases[2], norm_phrase4 = norm_phrases[3], silly_phrase1 = silly_phrases[0], silly_phrase2 = silly_phrases[1], silly_phrase3 = silly_phrases[2], silly_phrase4 = silly_phrases[3], norm_url1 = img_url(norm_phrases[0]) , norm_url2 = img_url(norm_phrases[1]) , norm_url3 = img_url(norm_phrases[2]) , norm_url4 = img_url(norm_phrases[3]) , silly_url1 = img_url(silly_phrases[0]), silly_url2 = img_url(silly_phrases[1]), silly_url3 = img_url(silly_phrases[2]), silly_url4 = img_url(silly_phrases[3]) )
 # #-------------------------------GETTY------------------------------------------------
 
