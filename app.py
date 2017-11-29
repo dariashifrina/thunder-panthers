@@ -1,7 +1,7 @@
 import urllib2, requests
 import json, urllib2
 from flask import Flask, render_template
-from util import translate
+from util import translate, feed_help
 import datamuse
 #import requests
 
@@ -11,6 +11,18 @@ app = Flask(__name__)
 @app.route("/")
 def home():
         return render_template("index.html")
+
+@app.route("/editfeed")
+def editfeed():
+        r = request.form
+        if "title" in r and "name" in r:
+                feed.add_entry(  r["title"], r["name"], r["pic1"], r["pic2"], r["pic3"], r["pic4"], r["phrase1"], r["phrase2"], r["phrase3"], r["phrase4"])
+        return redirect("/feed")
+
+@app.route("/feed")
+def feed():
+        comicdict = feed_help.get_dict()
+        return render_template("feed.html", comics = comicdict)
 
 #-------------------------------TRANSLATIONS-----------------------------------------
 
