@@ -107,26 +107,29 @@ Created util for feed. Reworked structure of database so that it wouldn't redund
 dariaS -- 2017-11-28 19:15
 Debugged feed util fxns through app.py. Did not have a chance to test with silly comics yet.
 
-jawadulK -- 2017-11-26 20:12
+jawadulK -- 2017-11-28 20:12
 Implemented a loop that repeatedly tries to mash sentences because inconsistencies in the translation output are inevitable.
 
-jawadulK -- 2017-11-26 21:13
+jawadulK -- 2017-11-28 21:13
 Made the index page send a POST request to the comic function, which reads the data and uses it.
 
-karinaI -- 2017-11-26 21:39
+karinaI -- 2017-11-28 21:39
 Updated img_text(sentence) and img_url(sentence) to get rid of bugs and improve image accuracy by returning random elements of the img_text phrases list (and avoiding first element if possible.)
 
-jawadulK -- 2017-11-26 23:27
+jawadulK -- 2017-11-28 23:27
 Testing the requests and flashing an error if necessary
 
-taylorW -- 2017-11-26 23:45
+taylorW -- 2017-11-28 23:45
 Making vaious edits including level dropdown, message flashing, submitting, and posting silly comics, working on navbar adjustment
 
-jawadulK -- 2017-11-26 00:45
+jawadulK -- 2017-11-29 00:45
 Implemented different levels of silliness
 
 dariaS -- 2017-11-29 1:30
 Feed works whoop whoop!!! Fixed minor HTML error in frontend that only passed the first word of every silly phrase, which messed with the entire process of rendering the comic.
 
-jawadulK -- 2017-11-26 01:45
+jawadulK -- 2017-11-29 01:45
 Removed all built-in API keys and made all functions run on user-given API keys.
+
+dariaS -- 2017-11-29 2:16
+Updated design doc to reflect new database scheme. 
