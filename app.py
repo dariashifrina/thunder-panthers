@@ -57,7 +57,7 @@ def comic():
 				else:
 					silly_phrases[i] = translate.to_english(silly_phrase, r['yandexTranslateApiKey'])[0].decode()
 				break
-			except (UnicodeDecodeError, IndexError):
+			except (UnicodeDecodeError, UnicodeEncodeError, IndexError):
 				pass
 	print norm_phrases
 	print silly_phrases

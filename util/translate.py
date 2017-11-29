@@ -14,7 +14,7 @@ def rand_lang():
 def translate(text, key):
 	print "text[0]: " + text[0]
 	print "text[1]: " + text[1]
-	cmd = "https://" + key + '&text=' + urllib.quote(text[0]) + '&lang=' + urllib.quote(text[1]) + '-' + urllib.quote(rand_lang())
+	cmd = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + key + '&text=' + urllib.quote(text[0]) + '&lang=' + urllib.quote(text[1]) + '-' + urllib.quote(rand_lang())
 	print " " + cmd + " "
 	uResp = urllib2.urlopen(cmd)
 	data = uResp.read()
@@ -32,7 +32,7 @@ def translate(text, key):
 def to_english(text, key):
 	print "text[0]: " + text[0]
 	print "text[1]: " + text[1]
-	cmd = "https://" + key + '&text=' + urllib.quote(text[0]) + '&lang=' + text[1] + urllib.quote('-en')
+	cmd = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + key + '&text=' + urllib.quote(text[0]) + '&lang=' + text[1] + urllib.quote('-en')
 	print " " + cmd + " "
 	uResp = urllib2.urlopen(cmd)
 	data = uResp.read()
