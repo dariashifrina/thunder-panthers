@@ -112,3 +112,6 @@ Updated img_text(sentence) and img_url(sentence) to get rid of bugs and improve 
 
 jawadulK -- 2017-11-26 23:27
 Testing the requests and flashing an error if necessary
+
+taylorW -- 2017-11-26 23:27
+Making vaious edits including level dropdown, message flashing, submitting, and posting silly comics, working on navbar adjustment
