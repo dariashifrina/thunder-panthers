@@ -32,10 +32,18 @@ def feed():
 @app.route('/comic', methods=["POST", "GET"])
 def comic():
 	if request.method == "GET":
-		flash('Sentence format incorrect')
+		r = request.args
+		print r
+	else:
+		r = request.form
+		print r
+	if 'apiKey' not in r:
+		flash('Please provide four proper phrases and an API key')
 		return redirect(url_for('home'))
-	r = request.form
 	for phrase in ['phrase1', 'phrase2', 'phrase3', 'phrase4']:
+		if phrase not in r:
+			flash('Sentence format incorrect')
+			return redirect(url_for('home'))
 		try:
 			datamuse.new_sent(r[phrase])
 		except IndexError:

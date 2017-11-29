@@ -109,3 +109,6 @@ Made the index page send a POST request to the comic function, which reads the d
 
 karinaI -- 2017-11-26 21:39
 Updated img_text(sentence) and img_url(sentence) to get rid of bugs and improve image accuracy by returning random elements of the img_text phrases list (and avoiding first element if possible.)
+
+jawadulK -- 2017-11-26 23:27
+Testing the requests and flashing an error if necessary

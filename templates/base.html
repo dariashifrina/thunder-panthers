@@ -55,7 +55,7 @@
     -->
 
     </nav>
-
+	<center>
     {% with messages = get_flashed_messages() %}
       {% for message in messages %}
       <div class="alert alert-danger">
@@ -73,6 +73,7 @@
     {% block content %}
 
     {% endblock %}
+	</center>
 
   </body>
 </html>
