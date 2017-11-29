@@ -68,3 +68,7 @@
   border: 3px solid #F4F1BB; /*F4F1BB / EDDEA4*/
   box-shadow: 4px 4px 4px #F2F0ED;
 }
+
+input[type="radio"]{
+  width: 200px;
+}

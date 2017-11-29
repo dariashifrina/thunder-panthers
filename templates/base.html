@@ -58,7 +58,15 @@
 
     {% with messages = get_flashed_messages() %}
       {% for message in messages %}
-        {{ message }}
+      <div class="alert alert-danger">
+        <center>
+          <strong>
+            Oops!
+          </strong>
+            {{ message }}
+        </center>
+      </div>
+
       {% endfor %}
     {% endwith %}
 

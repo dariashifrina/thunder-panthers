@@ -20,7 +20,7 @@ INDEX
   <!-- Form -->
   <div class="container">
     <!-- change names based on app.py, CHANGE TO POST-->
-    <form class="form-input" method="GET">
+    <form action="/comic" class="form-input" method="GET" id="make_comic">
 
       <!-- Phrases -->
       <h3>Phrases</h3>
@@ -50,16 +50,19 @@ INDEX
 
       <!-- Silliness Level -->
       <h3>Silliness Level</h3>
-      <div id="slidecontainer">
+      <div>
         <table class="table table-bordered">
           <tr>
             <td>
               <center>
-                <label class="radio-inline"><input type="radio" name="level" value="1">1</label>
-                <label class="radio-inline"><input type="radio" name="level" value="2">2</label>
-                <label class="radio-inline"><input type="radio" name="level" value="3">3</label>
-                <label class="radio-inline"><input type="radio" name="level" value="4">4</label>
-                <label class="radio-inline"><input type="radio" name="level" value="5">5</label>
+                <select class="form-control">
+                  <option selected>Pick Level</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
               </center>
             </td>
           </tr>
@@ -68,9 +71,7 @@ INDEX
 
       <br>
 
-      <a href="/comic">
-      <button class="btn btn-lg btn-block" type="submit">Generate my Comic!</button>
-      </a>
+      <button form="make_comic" class="btn btn-lg btn-block" type="submit" value="submit">Generate my Comic!</button>
 
     </form>
   </div>
